@@ -45,15 +45,16 @@ font-family: 'Pacifico', cursive;
 
 }
 .footer textarea{
-    height: 100%;
-    width: 97%;
+    height: 3em;
+    width: 90%;
     border-radius: 20px;
     margin: 0px;
-    padding: 5px;
+    padding: 10px;
     font-family: 'Dancing Script';
     font-family: 'Indie Flower';
     font-family: 'Pacifico';
 }
+
 .incoming{
     width: 50%;
     float: left;
@@ -124,4 +125,19 @@ margin-top: 0.75em;
     font-weight: bolder;
     background-color: black;
     
+}
+
+.send-btn{
+    background-color: palevioletred;
+    height: 2.5em;
+    width: 4em;
+    color:white;
+    font-weight: bolder;
+    border:2px black solid;
+    border-radius: 50px;
+
+}
+.send{
+    height: 3em;
+    display: inline-block;
 }
