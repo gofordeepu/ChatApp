@@ -18,9 +18,9 @@ let name;
  })
   
 send.addEventListener("click",function(){
-  textarea.value='';
+ 
  sendMsg(textarea.value)
-
+ textarea.value='';
  scrollBottom();
 });
 
