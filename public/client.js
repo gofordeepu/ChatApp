@@ -4,6 +4,7 @@ let msgBox=document.querySelector(".msg-box");
 let nameBox=document.querySelector(".user-name");
 let enter=document.querySelector('#save-btn');
 let form=document.querySelector('.model');
+let send=document.querySelector(".send-btn")
 let name;
  enter.addEventListener("click",function(e){
      e.preventDefault();
@@ -16,7 +17,12 @@ let name;
      
  })
   
+send.addEventListener("click",function(){
+  textarea.value='';
+ sendMsg(textarea.value)
 
+ scrollBottom();
+});
 
 textarea.addEventListener("keyup",(e)=>{
      if(e.key==='Enter'){
