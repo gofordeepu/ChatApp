@@ -1,11 +1,22 @@
-const socket=io()
+const socket=io();
 let textarea=document.querySelector("#text-msg");
 let msgBox=document.querySelector(".msg-box");
+let nameBox=document.querySelector(".user-name");
+let enter=document.querySelector('#save-btn');
+let form=document.querySelector('.model');
 let name;
-do{
-  name = prompt("Please enter your name");
-}while(!name)
-socket.emit("newUserJoined",name);
+ enter.addEventListener("click",function(e){
+     e.preventDefault();
+     name=nameBox.value;
+     while(!name){
+         nameBox.value="";
+     }
+     socket.emit("newUserJoined",name);
+     form.style.display="none";
+     
+ })
+  
+
 
 textarea.addEventListener("keyup",(e)=>{
      if(e.key==='Enter'){
@@ -22,7 +33,7 @@ function sendMsg(msg){
     }
   
     // Append the msg to outgoing
-    appendMsg(message,'outgoing')
+    appendMsg(message,'outgoing');
     // send to server
     socket.emit('message',message);
 }
@@ -50,12 +61,14 @@ function scrollBottom(){
 // Receive the message
 socket.on("message",(msg)=>{
     appendMsg(msg,"incoming");
+    incomingAudio();
     scrollBottom();
 });
 
 // new user joined
 socket.on("newUserJoined",(user)=>{
     appendJoin(user,"joined");
+    joinAudio();
 })
 // defining appendJoin
 function appendJoin(user,type){
@@ -73,4 +86,14 @@ function appendJoin(user,type){
     newDiv.innerHTML=data;
     msgBox.appendChild(newDiv);
     scrollBottom();
+}
+
+function joinAudio(){
+    let audio=new Audio("tune.mp3");
+    audio.play();
+
+}
+function incomingAudio(){
+    let audio=new Audio("incoming.mp3");
+    audio.play();
 }
