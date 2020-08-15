@@ -1,11 +1,11 @@
 #container{
     background-color:white;
-    width: auto
+    width: auto;
     height: 30em;
  
 }
 .header{
-    width: auto
+    width: auto;
     max-height: 15%;
     background-color: rgb(19, 247, 228);
     display: inline-block;
@@ -22,8 +22,8 @@ h1{
     text-align: center;
     border: 5px solid coral;
     background-color: aquamarine;
-    width: auto
-    margin-left: auto
+    width: auto;
+    margin-left: auto;
     padding:10px;
     border-radius: 30px;
     font-family: 'Dancing Script', cursive;
